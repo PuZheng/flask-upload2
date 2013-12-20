@@ -18,50 +18,50 @@ inoremap <Plug>ZenCodingExpandAbbr u:call zencoding#expandAbbr(0)a
 imap <silent> <Plug>IMAP_JumpBack =IMAP_Jumpfunc('b', 0)
 imap <silent> <Plug>IMAP_JumpForward =IMAP_Jumpfunc('', 0)
 inoremap <silent> <Plug>NERDCommenterInInsert  <BS>:call NERDComment(0, "insert")
-map rd :RopeShowDoc
-noremap ru :call RopeUseFunction()
-noremap rad :call RopeShowDoc()
-noremap rac :call RopeShowCalltip()
-noremap rx :call RopeRestructure()
-noremap r1r :call RopeRenameCurrentModule()
-noremap rr :call RopeRename()
-noremap ro :call RopeOrganizeImports()
-noremap r1v :call RopeMoveCurrentModule()
-noremap rv :call RopeMove()
-noremap r1p :call RopeModuleToPackage()
-noremap ra? :call RopeLuckyAssist()
-noremap raj :call RopeJumpToGlobal()
-noremap rf :call RopeIntroduceFactory()
-noremap ri :call RopeInline()
-noremap rag :call RopeGotoDefinition()
-noremap rnv :call RopeGenerateVariable()
-noremap rnp :call RopeGeneratePackage()
-noremap rnm :call RopeGenerateModule()
-noremap rnf :call RopeGenerateFunction()
-noremap rnc :call RopeGenerateClass()
-noremap raf :call RopeFindOccurrences()
-noremap rai :call RopeFindImplementations()
-noremap rl :call RopeExtractVariable()
-noremap rm :call RopeExtractMethod()
-noremap ra/ :call RopeCodeAssist()
-noremap rs :call RopeChangeSignature()
 noremap ra :call RopeAutoImport()
+noremap rs :call RopeChangeSignature()
+noremap ra/ :call RopeCodeAssist()
+noremap rm :call RopeExtractMethod()
+noremap rl :call RopeExtractVariable()
+noremap rai :call RopeFindImplementations()
+noremap raf :call RopeFindOccurrences()
+noremap rnc :call RopeGenerateClass()
+noremap rnf :call RopeGenerateFunction()
+noremap rnm :call RopeGenerateModule()
+noremap rnp :call RopeGeneratePackage()
+noremap rnv :call RopeGenerateVariable()
+noremap rag :call RopeGotoDefinition()
+noremap ri :call RopeInline()
+noremap rf :call RopeIntroduceFactory()
+noremap raj :call RopeJumpToGlobal()
+noremap ra? :call RopeLuckyAssist()
+noremap r1p :call RopeModuleToPackage()
+noremap rv :call RopeMove()
+noremap r1v :call RopeMoveCurrentModule()
+noremap ro :call RopeOrganizeImports()
+noremap rr :call RopeRename()
+noremap r1r :call RopeRenameCurrentModule()
+noremap rx :call RopeRestructure()
+noremap rac :call RopeShowCalltip()
+noremap rad :call RopeShowDoc()
+noremap ru :call RopeUseFunction()
+map rd :RopeShowDoc
 snoremap <silent> 	 i<Right>=TriggerSnippet()
 vmap <NL> <Plug>IMAP_JumpForward
 nmap <NL> <Plug>IMAP_JumpForward
 nnoremap <silent>  :CtrlP
-noremap pu :call RopeUndo()
-noremap pr :call RopeRedo()
-noremap pc :call RopeProjectConfig()
-noremap po :call RopeOpenProject()
-noremap pg :call RopeGenerateAutoimportCache()
-noremap p4f :call RopeFindFileOtherWindow()
-noremap pf :call RopeFindFile()
-noremap pnp :call RopeCreatePackage()
-noremap pnm :call RopeCreateModule()
-noremap pnf :call RopeCreateFile()
-noremap pnd :call RopeCreateDirectory()
 noremap pk :call RopeCloseProject()
+noremap pnd :call RopeCreateDirectory()
+noremap pnf :call RopeCreateFile()
+noremap pnm :call RopeCreateModule()
+noremap pnp :call RopeCreatePackage()
+noremap pf :call RopeFindFile()
+noremap p4f :call RopeFindFileOtherWindow()
+noremap pg :call RopeGenerateAutoimportCache()
+noremap po :call RopeOpenProject()
+noremap pc :call RopeProjectConfig()
+noremap pr :call RopeRedo()
+noremap pu :call RopeUndo()
 snoremap  b<BS>
 nmap A <Plug>ZenCodingAnchorizeSummary
 nmap a <Plug>ZenCodingAnchorizeURL
@@ -80,13 +80,13 @@ nmap , <Plug>ZenCodingExpandNormal
 vmap , <Plug>ZenCodingExpandVisual
 snoremap % b<BS>%
 snoremap ' b<BS>'
-map ,h :Dbg here
-map ,b :Dbg break
-map ,w :Dbg watch
-map ,u :Dbg up
-map ,r :Dbg run
-map ,i :Dbg into
 map ,o :Dbg over
+map ,i :Dbg into
+map ,r :Dbg run
+map ,u :Dbg up
+map ,w :Dbg watch
+map ,b :Dbg break
+map ,h :Dbg here
 nmap ,ca <Plug>NERDCommenterAltDelims
 vmap ,cA <Plug>NERDCommenterAppend
 nmap ,cA <Plug>NERDCommenterAppend
@@ -217,30 +217,80 @@ set wildignore=*.pyc
 let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0
 let v:this_session=expand("<sfile>:p")
 silent only
-cd ~/work/wtforms-upload-env/wtforms-upload/flask_upload2
+cd ~/work/TheGenuine-AP-env/flask-upload2/flask_upload2
 if expand('%') == '' && !&modified && line('$') <= 1 && getline(1) == ''
   let s:wipebuf = bufnr('%')
 endif
 set shortmess=aoO
-badd +117 templates/flask_upload2__/macro.html
+badd +70 templates/flask_upload2__/macro.html
 badd +9 flask_upload.py
-badd +24 templates/uploader.html
-badd +21 fields.py
-badd +5 widgets.py
+badd +43 templates/uploader.html
+badd +24 fields.py
+badd +17 widgets.py
+badd +1 static/js/jquery.blueimp-gallery.min.js
+badd +61 static/js/jquery.fileupload-jquery-ui.js
+badd +511 static/js/jquery.fileupload-ui.js
+badd +758 static/js/jquery.fileupload.js
+badd +6 templates/flask_upload2__/uploader.html
+badd +21 static/css/fileinput.css
+badd +81 static/js/fileinput.js
 silent! argdel *
-edit templates/flask_upload2__/macro.html
+edit fields.py
 set splitbelow splitright
-wincmd _ | wincmd |
-split
-1wincmd k
-wincmd w
 set nosplitbelow
 set nosplitright
 wincmd t
 set winheight=1 winwidth=1
-exe '1resize ' . ((&lines * 50 + 28) / 56)
-exe '2resize ' . ((&lines * 3 + 28) / 56)
 argglobal
+let s:cpo_save=&cpo
+set cpo&vim
+imap <buffer> <Nul> ¯
+imap <buffer> <C-Space> ¯
+inoremap <buffer> <silent> <S-Tab> =RopeLuckyAssistInsertMode()
+noremap <buffer> <silent> m :emenu Rope . 	
+noremap <buffer> <silent> f :RopeFindOccurrences
+noremap <buffer> <silent> d :RopeShowDoc
+noremap <buffer> <silent> g :RopeGotoDefinition
+nnoremap <buffer> <silent> ,b :call pymode#breakpoint#Set(line('.'))
+vnoremap <buffer> <silent> ,r :Pyrun
+nnoremap <buffer> <silent> ,r :Pyrun
+onoremap <buffer> C :call pymode#motion#select('^\s*class\s', 0)
+vnoremap <buffer> <silent> K :call pymode#doc#Show(@*)
+nnoremap <buffer> <silent> K :call pymode#doc#Show(expand('<cword>'))
+onoremap <buffer> M :call pymode#motion#select('^\s*def\s', 0)
+vnoremap <buffer> [M :call pymode#motion#vmove('^\s*def\s', 'b')
+vnoremap <buffer> [[ :call pymode#motion#vmove('^\(class\|def\)\s', 'b')
+onoremap <buffer> [M :call pymode#motion#move('^\s*def\s', 'b')
+onoremap <buffer> [C :call pymode#motion#move('^\(class\|def\)\s', 'b')
+onoremap <buffer> [[ :call pymode#motion#move('^\(class\|def\)\s', 'b')
+nnoremap <buffer> [M :call pymode#motion#move('^\s*def\s', 'b')
+nnoremap <buffer> [C :call pymode#motion#move('^\(class\|def\)\s', 'b')
+nnoremap <buffer> [[ :call pymode#motion#move('^\(class\|def\)\s', 'b')
+vnoremap <buffer> ]M :call pymode#motion#vmove('^\s*def\s', '')
+vnoremap <buffer> ]] :call pymode#motion#vmove('^\(class\|def\)\s', '')
+onoremap <buffer> ]M :call pymode#motion#move('^\s*def\s', '')
+onoremap <buffer> ]C :call pymode#motion#move('^\(class\|def\)\s', '')
+onoremap <buffer> ]] :call pymode#motion#move('^\(class\|def\)\s', '')
+nnoremap <buffer> ]M :call pymode#motion#move('^\s*def\s', '')
+nnoremap <buffer> ]C :call pymode#motion#move('^\(class\|def\)\s', '')
+nnoremap <buffer> ]] :call pymode#motion#move('^\(class\|def\)\s', '')
+vnoremap <buffer> aM :call pymode#motion#select('^\s*def\s', 0)
+onoremap <buffer> aM :call pymode#motion#select('^\s*def\s', 0)
+vnoremap <buffer> aC :call pymode#motion#select('^\s*class\s', 0)
+onoremap <buffer> aC :call pymode#motion#select('^\s*class\s', 0)
+vnoremap <buffer> iM :call pymode#motion#select('^\s*def\s', 1)
+onoremap <buffer> iM :call pymode#motion#select('^\s*def\s', 1)
+vnoremap <buffer> iC :call pymode#motion#select('^\s*class\s', 1)
+onoremap <buffer> iC :call pymode#motion#select('^\s*class\s', 1)
+inoreabbr <buffer> cfrom =IMAP_PutTextWithMovement("from <++> import <++>")
+inoreabbr <buffer> ctry =IMAP_PutTextWithMovement("try:\n<++>\nexcept <++>:\n    <++>")
+inoreabbr <buffer> cifelse =IMAP_PutTextWithMovement("if <++>:\n<++>\nelse:\n<++>")
+inoreabbr <buffer> cif =IMAP_PutTextWithMovement("if <++>:\n<++>")
+inoreabbr <buffer> cfor =IMAP_PutTextWithMovement("for <++> in <++>:\n<++>")
+inoreabbr <buffer> cclass =IMAP_PutTextWithMovement("class <++>:\n<++>")
+inoreabbr <buffer> cfun =IMAP_PutTextWithMovement("def <++>(<++>):\n<++>\nreturn <++>")
+let &cpo=s:cpo_save
+unlet s:cpo_save
 setlocal keymap=
 setlocal noarabic
 setlocal autoindent
@@ -250,13 +300,13 @@ setlocal bufhidden=
 setlocal buflisted
 setlocal buftype=
 setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
+setlocal cinkeys=0{,0},0),:,!^F,o,O,e
 setlocal cinoptions=
 setlocal cinwords=if,else,while,do,for,switch
 set colorcolumn=78
 setlocal colorcolumn=78
-setlocal comments=s:<!--,m:\ \ \ \ ,e:-->
-setlocal commentstring=<!--%s-->
+setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:XCOMM,n:>,fb:-
+setlocal commentstring=#%s
 setlocal complete=.,w,b,u,t,i
 setlocal concealcursor=
 setlocal conceallevel=0
@@ -270,158 +320,46 @@ setlocal define=
 setlocal dictionary=
 setlocal nodiff
 setlocal equalprg=
-setlocal errorformat=
+setlocal errorformat=%+P[%f],%t:\ %#%l:%m,%Z,%+IYour\ code%m,%Z,%-G%.%#
 setlocal expandtab
-if &filetype != 'html'
-setlocal filetype=html
+if &filetype != 'python'
+setlocal filetype=python
 endif
 setlocal foldcolumn=0
 setlocal foldenable
-setlocal foldexpr=0
+setlocal foldexpr=pymode#folding#expr(v:lnum)
 setlocal foldignore=#
 setlocal foldlevel=0
 setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
+setlocal foldmethod=expr
 setlocal foldminlines=1
 setlocal foldnestmax=20
-setlocal foldtext=foldtext()
+setlocal foldtext=pymode#folding#text()
 setlocal formatexpr=
-setlocal formatoptions=tcqmM
+setlocal formatoptions=cqmM
 setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
 setlocal grepprg=
 setlocal iminsert=2
 setlocal imsearch=2
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=HtmlIndentGet(v:lnum)
-setlocal indentkeys=o,O,*<Return>,<>>,{,}
+setlocal include=^\\s*\\(from\\|import\\)
+setlocal includeexpr=substitute(v:fname,'\\.','/','g')
+setlocal indentexpr=pymode#indent#Indent(v:lnum)
+setlocal indentkeys=!^F,o,O,<:>,0),0],0},=elif,=except
 setlocal noinfercase
 setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
+setlocal keywordprg=pydoc
 setlocal nolinebreak
 setlocal nolisp
 setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:],<:>
+setlocal makeprg=(echo\ '[%]';\ pylint\ -r\ y\ %)
+setlocal matchpairs=(:),{:},[:]
 setlocal modeline
 setlocal modifiable
 setlocal nrformats=octal,hex
 set number
 setlocal number
 setlocal numberwidth=4
-setlocal omnifunc=htmlcomplete#CompleteTags
-setlocal path=
-setlocal nopreserveindent
-setlocal nopreviewwindow
-setlocal quoteescape=\\
-setlocal noreadonly
-setlocal norelativenumber
-setlocal norightleft
-setlocal rightleftcmd=search
-setlocal noscrollbind
-setlocal shiftwidth=2
-setlocal noshortname
-setlocal nosmartindent
-setlocal softtabstop=0
-setlocal nospell
-setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
-setlocal spellfile=
-setlocal spelllang=en
-setlocal statusline=
-setlocal suffixesadd=
-setlocal swapfile
-setlocal synmaxcol=3000
-if &syntax != 'html'
-setlocal syntax=html
-endif
-setlocal tabstop=2
-setlocal tags=
-setlocal textwidth=0
-setlocal thesaurus=
-setlocal noundofile
-setlocal nowinfixheight
-setlocal nowinfixwidth
-setlocal wrap
-setlocal wrapmargin=0
-silent! normal! zE
-let s:l = 117 - ((24 * winheight(0) + 25) / 50)
-if s:l < 1 | let s:l = 1 | endif
-exe s:l
-normal! zt
-117
-normal! 010l
-wincmd w
-argglobal
-enew
-setlocal keymap=
-setlocal noarabic
-setlocal autoindent
-setlocal balloonexpr=
-setlocal nobinary
-setlocal bufhidden=wipe
-setlocal buflisted
-setlocal buftype=quickfix
-setlocal nocindent
-setlocal cinkeys=0{,0},0),:,0#,!^F,o,O,e
-setlocal cinoptions=
-setlocal cinwords=if,else,while,do,for,switch
-set colorcolumn=78
-setlocal colorcolumn=78
-setlocal comments=s1:/*,mb:*,ex:*/,://,b:#,:%,:XCOMM,n:>,fb:-
-setlocal commentstring=/*%s*/
-setlocal complete=.,w,b,u,t,i
-setlocal concealcursor=
-setlocal conceallevel=0
-setlocal completefunc=
-setlocal nocopyindent
-setlocal cryptmethod=
-setlocal nocursorbind
-setlocal nocursorcolumn
-setlocal nocursorline
-setlocal define=
-setlocal dictionary=
-setlocal nodiff
-setlocal equalprg=
-setlocal errorformat=
-setlocal expandtab
-if &filetype != 'qf'
-setlocal filetype=qf
-endif
-setlocal foldcolumn=0
-setlocal foldenable
-setlocal foldexpr=0
-setlocal foldignore=#
-setlocal foldlevel=0
-setlocal foldmarker={{{,}}}
-setlocal foldmethod=manual
-setlocal foldminlines=1
-setlocal foldnestmax=20
-setlocal foldtext=foldtext()
-setlocal formatexpr=
-setlocal formatoptions=tcqmM
-setlocal formatlistpat=^\\s*\\d\\+[\\]:.)}\\t\ ]\\s*
-setlocal grepprg=
-setlocal iminsert=2
-setlocal imsearch=2
-setlocal include=
-setlocal includeexpr=
-setlocal indentexpr=
-setlocal indentkeys=0{,0},:,0#,!^F,o,O,e
-setlocal noinfercase
-setlocal iskeyword=@,48-57,_,192-255
-setlocal keywordprg=
-setlocal nolinebreak
-setlocal nolisp
-setlocal nolist
-setlocal makeprg=
-setlocal matchpairs=(:),{:},[:]
-setlocal modeline
-setlocal nomodifiable
-setlocal nrformats=octal,hex
-set number
-setlocal number
-setlocal numberwidth=4
-setlocal omnifunc=
+setlocal omnifunc=RopeOmni
 setlocal path=
 setlocal nopreserveindent
 setlocal nopreviewwindow
@@ -434,30 +372,43 @@ setlocal noscrollbind
 setlocal shiftwidth=4
 setlocal noshortname
 setlocal nosmartindent
-setlocal softtabstop=0
+setlocal softtabstop=4
 setlocal nospell
 setlocal spellcapcheck=[.?!]\\_[\\])'\"\	\ ]\\+
 setlocal spellfile=
 setlocal spelllang=en
-setlocal statusline=%t%{exists('w:quickfix_title')?\ '\ '.w:quickfix_title\ :\ ''}\ %=%-15(%l,%c%V%)\ %P
-setlocal suffixesadd=
-setlocal noswapfile
+setlocal statusline=
+setlocal suffixesadd=.py
+setlocal swapfile
 setlocal synmaxcol=3000
-if &syntax != 'qf'
-setlocal syntax=qf
+if &syntax != 'python'
+setlocal syntax=python
 endif
 setlocal tabstop=4
 setlocal tags=
-setlocal textwidth=0
+setlocal textwidth=79
 setlocal thesaurus=
 setlocal noundofile
-setlocal winfixheight
+setlocal nowinfixheight
 setlocal nowinfixwidth
-setlocal wrap
+setlocal nowrap
 setlocal wrapmargin=0
-wincmd w
-exe '1resize ' . ((&lines * 50 + 28) / 56)
-exe '2resize ' . ((&lines * 3 + 28) / 56)
+7
+normal zo
+12
+normal zo
+20
+normal zo
+24
+normal zo
+37
+normal zo
+let s:l = 34 - ((33 * winheight(0) + 27) / 54)
+if s:l < 1 | let s:l = 1 | endif
+exe s:l
+normal! zt
+34
+normal! 017l
 tabnext 1
 if exists('s:wipebuf')
   silent exe 'bwipe ' . s:wipebuf

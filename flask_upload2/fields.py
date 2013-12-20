@@ -10,10 +10,12 @@ class FileField(fields.Field):
     type = 'FileField'
 
     def __init__(self, label='', validators=None, save_path=None, max_num=1,
+                 preview_size=(128, 128),
                  *args, **kwargs):
         super(FileField, self).__init__(label, validators, *args, **kwargs)
         self.save_path = save_path
         self.max_num = max_num
+        self.preview_size = preview_size
 
     @property
     def multiple(self):
@@ -29,7 +31,7 @@ class FileField(fields.Field):
         # filename == '<fdopen>' is for a werkzeug hack:
         #   large file uploads will get stored in a temporary file on disk and
         #   show up as an extra FileStorage with name '<fdopen>'
-        return all(fs.filename not in [None, '', '<fdopen>'] for fs in
+        return any(fs.filename not in [None, '', '<fdopen>'] for fs in
                    self.data)
 
     def process_formdata(self, valuelist):

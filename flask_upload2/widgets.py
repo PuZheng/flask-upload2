@@ -1,6 +1,6 @@
 # -*- coding: UTF-8 -*-
 import pkg_resources
-from flask import render_template_string
+from flask import render_template
 
 
 class FileInput(object):
@@ -11,6 +11,7 @@ class FileInput(object):
             # TODO return a widget like http://jasny.github.io/bootstrap/javascript/#fileinput
             return ''
         else:
-            s = pkg_resources.resource_string(__name__,
-                                              'templates/uploader.html')
-            return render_template_string(s, field_name=field.name)
+            return render_template('flask_upload2__/uploader.html',
+                                   field_name=field.name,
+                                   max_num=field.max_num,
+                                   preview_size=field.preview_size)
