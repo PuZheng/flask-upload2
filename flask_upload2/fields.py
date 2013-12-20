@@ -4,6 +4,7 @@ from werkzeug import FileStorage
 from .widgets import FileInput
 
 
+# TODO provides more validators
 class FileField(fields.Field):
 
     widget = FileInput()
