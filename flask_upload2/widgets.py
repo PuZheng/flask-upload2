@@ -10,4 +10,4 @@ class FileInput(object):
         return render_template('flask_upload2__/uploader.html',
                                 field_name=field.name,
                                 max_num=field.max_num,
-                                preview_size=field.preview_size)
+                                preview_size=field.preview_size, **kwargs)
