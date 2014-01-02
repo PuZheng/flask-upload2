@@ -37,7 +37,6 @@ setup(
     packages=find_packages(),
     include_package_data=True,
     zip_safe=False,
-    package_data={PACKAGE: ['templates/*']},
     tests_require=['pytest'],
     cmdclass={'test': PyTest},
     entry_points={
